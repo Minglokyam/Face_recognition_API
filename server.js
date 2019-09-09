@@ -7,12 +7,11 @@ const signin = require('./controllers/signin');
 const register = require('./controllers/register');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
-const DATABASE_URL = process.env.DATABASE_URL;
 
 const adb = knex({
     client: 'pg',
     connection: {
-        host : 'DATABASE_URL',
+        host : 'process.env.DATABASE_URL',
         ssl: true
     }
 });
