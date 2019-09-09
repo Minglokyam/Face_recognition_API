@@ -7,14 +7,13 @@ const signin = require('./controllers/signin');
 const register = require('./controllers/register');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const adb = knex({
     client: 'pg',
     connection: {
-        host : 'postgresql-cubic-17050',
-        user : 'postgres',
-        password : '',
-        database : 'smart_brain'
+        host : 'DATABASE_URL',
+        ssl: true
     }
 });
 
